@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{
@@ -22,8 +24,7 @@ export default function About({}: Props) {
       </h3>
 
       <motion.img
-        src="https://i.thimo.dev/63671231ad1dce5b8252aea0"
-        crossOrigin="anonymous"
+        src={urlFor(pageInfo?.profilePic)?.url() ?? ""}
         initial={{
           x: -200,
           opacity: 0,
@@ -42,26 +43,7 @@ export default function About({}: Props) {
           <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           background
         </h4>
-        <p className="text-sm">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-          repellendus repellat, deserunt eum pariatur cumque nesciunt possimus
-          quo asperiores nostrum? Recusandae fugiat dolor omnis assumenda cumque
-          fuga mollitia quisquam dolores! Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Dicta nulla facilis minus eaque aperiam
-          perspiciatis, blanditiis consectetur at incidunt omnis animi
-          repellendus aspernatur illum dolores ab cupiditate error illo
-          deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Perferendis dolores eius, cum possimus distinctio odit tempora,
-          laudantium id minus reiciendis corrupti dicta aliquam doloremque
-          aspernatur veniam deleniti ut rem quas! Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Doloribus placeat sint maxime dolore
-          nemo, qui repellat rerum porro deleniti aliquid eligendi suscipit
-          reprehenderit, cupiditate cumque est veniam facilis. Enim, facilis?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sequi
-          placeat ipsa minus accusantium nemo provident et, aspernatur
-          temporibus nam tempore. Ea debitis, sint porro perspiciatis minus
-          doloremque omnis amet.
-        </p>
+        <p className="text-sm">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

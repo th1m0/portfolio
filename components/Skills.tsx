@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
+import { Skill as SkillType } from "../typings";
 
-type Props = {};
+type Props = { skills: SkillType[] };
 
-export default function Skills({}: Props) {
+export default function Skills({ skills }: Props) {
   return (
     <motion.div className="flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -16,20 +17,13 @@ export default function Skills({}: Props) {
       </h3>
 
       <div className="grid grid-cols-4 gap-5">
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skills?.slice(0, skills.length / 2)?.map((skill, i) => (
+          <Skill key={skill._id} skill={skill} />
+        ))}
+
+        {skills?.slice(skills.length / 2, skills.length)?.map((skill, i) => (
+          <Skill key={skill._id} skill={skill} directionLeft />
+        ))}
       </div>
     </motion.div>
   );
