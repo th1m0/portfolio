@@ -14,6 +14,7 @@ node_modules
 
 # production
 /build
+/sanity/dist
 
 # misc
 .DS_Store
@@ -34,3 +35,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# lock
+yarn.lock
+package-lock.json
+
+# Eco System
+ecosystem.config.js
