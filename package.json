@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "production": "next build && next start"
+    "production": "yarn install && next build && next start"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.13",
