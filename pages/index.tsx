@@ -79,8 +79,7 @@ export default function Home({
               height={40}
               width={40}
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              crossOrigin="anonymous"
-              src="https://i.thimo.dev/63671231ad1dce5b8252aea0"
+              src={urlFor(pageInfo?.heroImage)?.url() ?? ""}
               alt=""
             />
           </div>
