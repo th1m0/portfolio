@@ -67,9 +67,9 @@ export default function Home({
       </section>
 
       {/* Contact Me */}
-      <section id="contact" className="snap-start">
+      {/* <section id="contact" className="snap-start">
         <ContactMe />
-      </section>
+      </section> */}
 
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
