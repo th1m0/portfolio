@@ -36,9 +36,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# lock
-yarn.lock
-package-lock.json
-
 # Eco System
 ecosystem.config.js
