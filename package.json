@@ -2,37 +2,38 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
     "lint": "next lint",
-    "production": "yarn install && next build && next start"
+    "start": "next start"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.13",
-    "@portabletext/react": "^2.0.0",
-    "@sanity/image-url": "^1.0.1",
-    "@types/node": "18.11.9",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.8",
-    "eslint": "8.26.0",
-    "eslint-config-next": "13.0.2",
-    "framer-motion": "^7.6.4",
-    "next": "12.3.0",
-    "next-sanity": "^1.0.9",
+    "@t3-oss/env-nextjs": "^0.10.1",
+    "geist": "^1.3.0",
+    "next": "^14.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.39.1",
-    "react-simple-typewriter": "^4.0.5",
-    "react-social-icons": "^5.15.0",
-    "sharp": "^0.31.2",
-    "typescript": "4.8.4"
+    "zod": "^3.23.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.18",
-    "tailwind-scrollbar": "^2.0.1",
-    "tailwindcss": "^3.2.2"
-  }
+    "@types/eslint": "^8.56.2",
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.57",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.1.3",
+    "postcss": "^8.4.34",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
+  },
+  "ct3aMetadata": {
+    "initVersion": "7.33.1"
+  },
+  "packageManager": "pnpm@8.15.3"
 }
