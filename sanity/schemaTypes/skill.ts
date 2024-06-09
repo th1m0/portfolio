@@ -10,13 +10,14 @@ export default defineType({
       title: "Title",
       description: "The title of the skill",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "progress",
       title: "Progress",
       type: "number",
       description: "The progress of the skill from 0 to 100%",
-      validation: (Rule) => Rule.min(0).max(100),
+      validation: (Rule) => Rule.min(0).max(100) && Rule.required(),
     }),
     defineField({
       name: "image",
@@ -25,6 +26,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
   ]
 });

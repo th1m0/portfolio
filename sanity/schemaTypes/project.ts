@@ -10,6 +10,7 @@ export default defineType({
       title: "Title",
       description: "The title of the project",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "image",
@@ -23,6 +24,7 @@ export default defineType({
       name: "summary",
       title: "Summary",
       type: "text",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "technologies",

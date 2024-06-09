@@ -9,6 +9,7 @@ export default defineType({
       name: "jobTitle",
       title: "Job Title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "CompanyImage",
@@ -22,11 +23,13 @@ export default defineType({
       name: "company",
       title: "Company",
       type: "text",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "dateStarted",
       title: "Date Started",
       type: "date",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "dateEnded",
@@ -37,6 +40,8 @@ export default defineType({
       name: "isCurrentlyWorkingHere",
       title: "Is Currently Working Here",
       type: "boolean",
+      initialValue: false,
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "technologies",

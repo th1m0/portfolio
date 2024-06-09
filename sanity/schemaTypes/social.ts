@@ -10,11 +10,13 @@ export default defineType({
       title: "Title",
       description: "The platform for social media",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "url",
       title: "URL",
       type: "url",
+      validation: (Rule) => Rule.required(),
     }),
   ]
 });
