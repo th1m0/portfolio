@@ -3,11 +3,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
-import type { Experience } from "~/typings";
+import { ExperienceQueryResult } from "~/sanity.types";
 
-type Props = { experiences: Experience[] };
-
-export default function WorkExperience({ experiences }: Props) {
+export default function WorkExperience({
+  experiences,
+}: {
+  experiences: ExperienceQueryResult;
+}) {
   return (
     <motion.div
       initial={{
@@ -26,7 +28,7 @@ export default function WorkExperience({ experiences }: Props) {
       </h3>
 
       <div className="scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 flex w-full snap-x snap-mandatory space-x-5 overflow-y-scroll p-10">
-        {experiences?.map((experience) => (
+        {experiences.map((experience) => (
           <ExperienceCard key={experience._id} experience={experience} />
         ))}
       </div>

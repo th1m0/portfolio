@@ -2,14 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import type { Experience } from "~/typings";
+import type { ExperienceQueryResult } from "~/sanity.types";
 import { urlFor } from "~/sanity";
 import Image from "next/image";
 
 export default function ExperienceCard({
   experience,
 }: {
-  experience: Experience;
+  experience: ExperienceQueryResult[number];
 }) {
   return (
     // TODO: w-screen for less than 4 experiences.
@@ -31,7 +31,7 @@ export default function ExperienceCard({
           once: true,
         }}
         className="h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px]"
-        src={urlFor(experience?.companyImage)?.url() ?? ""}
+        src={urlFor(experience.companyImage ?? null)?.url() ?? ""}
         alt=""
       />
 
@@ -45,7 +45,7 @@ export default function ExperienceCard({
               width={50}
               key={technology._id}
               className="rounded-full"
-              src={urlFor(technology?.image)?.url() ?? ""}
+              src={urlFor(technology.image)?.url() ?? ""}
               alt=""
             />
           ))}
@@ -54,7 +54,7 @@ export default function ExperienceCard({
           {new Date(experience?.dateStarted).toDateString()} -{" "}
           {experience?.isCurrentlyWorkingHere
             ? "Present"
-            : new Date(experience?.dateEnded).toDateString()}
+            : new Date(experience.dateEnded ?? Date.now()).toDateString()}
         </p>
         <ul className="ml-5 list-disc space-y-4 text-lg">
           {experience?.points?.map((point, i) => <li key={i}>{point}</li>)}

@@ -1,43 +1,88 @@
+import { Metadata } from "next";
 import Link from "next/link";
+import About from "~/components/About";
+import Header from "~/components/Header";
+import Hero from "~/components/Hero";
+import Projects from "~/components/Projects";
+import Skills from "~/components/Skills";
+import WorkExperience from "~/components/WorkExperience";
+import Image from "next/image";
+import {
+  fetchPageInfo,
+  fetchExperiences,
+  fetchSkills,
+  fetchProjects,
+  fetchSocials,
+} from "~/server/queries";
+import { urlFor } from "~/sanity";
 
-const fetchData = async () => {
-  const res = await fetch("", {
-    next: { revalidate: 10 },
-  });
+export const revalidate = 10;
+
+export const metadata: Metadata = {
+  title: "Portfolio Thimo Sietsma",
+  description:
+    "Portfolio of Thimo Sietsma, a software engineer based in the Netherlands.",
+  authors: {
+    name: "Thimo Sietsma",
+  },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const pageInfo = await fetchPageInfo();
+  const experiences = await fetchExperiences();
+  const skills = await fetchSkills();
+  const projects = await fetchProjects();
+  const socials = await fetchSocials();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
-      </div>
-    </main>
+    <div className="scroll-bar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 z-0 h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll bg-[rgb(36,36,36)] text-white">
+      {/* Header */}
+      <Header socials={socials} />
+
+      {/* Hero */}
+      <section id="hero" className="snap-start">
+        <Hero pageInfo={pageInfo} />
+      </section>
+
+      {/* About */}
+      <section id="about" className="snap-center">
+        <About pageInfo={pageInfo} />
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="snap-center">
+        <WorkExperience experiences={experiences} />
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="snap-start">
+        <Skills skills={skills} />
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="snap-start">
+        <Projects projects={projects} />
+      </section>
+
+      {/* Contact Me */}
+      {/* <section id="contact" className="snap-start">
+        <ContactMe />
+      </section> */}
+
+      <Link href="#hero">
+        <footer className="sticky bottom-5 w-full cursor-pointer">
+          <div className="flex items-center justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <Image
+              height={40}
+              width={40}
+              className="h-10 w-10 cursor-pointer rounded-full grayscale filter hover:grayscale-0"
+              src={urlFor(pageInfo?.heroImage)?.url() ?? ""}
+              alt=""
+            />
+          </div>
+        </footer>
+      </Link>
+    </div>
   );
 }

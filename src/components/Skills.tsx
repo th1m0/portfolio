@@ -3,11 +3,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
-import type { Skill as SkillType } from "~/typings";
+import { SkillsQueryResult } from "~/sanity.types";
 
-type Props = { skills: SkillType[] };
-
-export default function Skills({ skills }: Props) {
+export default function Skills({ skills }: { skills: SkillsQueryResult }) {
   return (
     <motion.div className="relative mx-auto flex min-h-screen max-w-[2000px] flex-col items-center justify-center text-center md:text-left xl:flex-row xl:space-y-0 xl:px-10">
       <h3 className="absolute top-16 text-2xl uppercase tracking-[20px] text-gray-500">
@@ -23,11 +21,9 @@ export default function Skills({ skills }: Props) {
           ?.slice(0, skills.length / 2)
           ?.map((skill, i) => <Skill key={skill._id} skill={skill} />)}
 
-        {skills
-          ?.slice(skills.length / 2, skills.length)
-          ?.map((skill, i) => (
-            <Skill key={skill._id} skill={skill} directionLeft />
-          ))}
+        {skills.slice(skills.length / 2, skills.length).map((skill, i) => (
+          <Skill key={skill._id} skill={skill} directionLeft />
+        ))}
       </div>
     </motion.div>
   );

@@ -12,7 +12,7 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "CompanyImage",
+      name: "companyImage",
       title: "Company Image",
       type: "image",
       options: {

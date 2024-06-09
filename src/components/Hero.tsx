@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { urlFor } from "~/sanity";
-import type { PageInfo } from "~/typings";
+import type { PageInfo } from "~/sanity.types";
 import BackgroundCircles from "./BackgroundCircles";
 
 export default function Hero({ pageInfo }: { pageInfo: PageInfo }) {

@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import type { Skill as SkillType } from "~/typings";
+import type { SkillsQueryResult } from "~/sanity.types";
 import { urlFor } from "~/sanity";
 
 export default function Skill({
   skill,
   directionLeft,
 }: {
-  skill: SkillType;
+  skill: SkillsQueryResult[number];
   directionLeft?: boolean;
 }) {
   return (

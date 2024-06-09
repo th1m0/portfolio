@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import type { PageInfo } from "~/typings";
+import type { PageInfo } from "~/sanity.types";
 import { urlFor } from "~/sanity";
 
 export default function About({ pageInfo }: { pageInfo: PageInfo }) {
@@ -24,7 +24,7 @@ export default function About({ pageInfo }: { pageInfo: PageInfo }) {
       </h3>
 
       <motion.img
-        src={urlFor(pageInfo?.profilePic)?.url() ?? ""}
+        src={urlFor(pageInfo.profilePicture)?.url() ?? ""}
         initial={{
           x: -200,
           opacity: 0,
@@ -43,7 +43,7 @@ export default function About({ pageInfo }: { pageInfo: PageInfo }) {
           <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
           background
         </h4>
-        <p className="text-sm">{pageInfo?.backgroundInformation}</p>
+        <p className="text-sm">{pageInfo.backgroundInformation}</p>
       </div>
     </motion.div>
   );

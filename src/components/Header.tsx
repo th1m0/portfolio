@@ -3,9 +3,9 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import type { Social } from "~/typings";
+import type { Social, SocialsQueryResult } from "~/sanity.types";
 
-function Header({ socials }: { socials: Social[] }) {
+function Header({ socials }: { socials: SocialsQueryResult }) {
   return (
     <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-start justify-between p-5 xl:items-center">
       <motion.div

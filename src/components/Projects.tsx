@@ -2,11 +2,15 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import type { Project } from "~/typings";
+import type { ProjectsQueryResult } from "~/sanity.types";
 import { urlFor } from "~/sanity";
 import Image from "next/image";
 
-export default function Projects({ projects }: { projects: Project[] }) {
+export default function Projects({
+  projects,
+}: {
+  projects: ProjectsQueryResult;
+}) {
   return (
     <motion.div
       initial={{
@@ -45,7 +49,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
               viewport={{
                 once: true,
               }}
-              src={urlFor(project?.image)?.url() ?? ""}
+              src={urlFor(project.image ?? null)?.url() ?? ""}
               alt=""
             />
 
