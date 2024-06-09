@@ -1,6 +1,6 @@
 import { groq } from "next-sanity"
 import { sanityClient } from "~/sanity"
-import type { PageInfo, Project, Skill, Social } from "~/sanity.types"
+import type { ExperienceQueryResult, PageInfoQueryResult, ProjectsQueryResult, SkillsQueryResult, SocialsQueryResult } from "~/sanity.types"
 
 export const fetchExperiences = async () => {
   const experienceQuery = groq`
@@ -9,7 +9,9 @@ export const fetchExperiences = async () => {
       technologies[]->
     }
   `
-  const experiences = await sanityClient.fetch(experienceQuery)
+  const experiences = await sanityClient.fetch<ExperienceQueryResult>(experienceQuery)
+
+  if (experiences == null) throw new Error("No experiences found")
 
   return experiences
 }
@@ -18,7 +20,9 @@ export const fetchPageInfo = async () => {
   const pageInfoQuery = groq`
     *[_type == "pageInfo"][0]
   `
-  const pageInfo = await sanityClient.fetch<PageInfo>(pageInfoQuery)
+  const pageInfo = await sanityClient.fetch<PageInfoQueryResult>(pageInfoQuery)
+
+  if (pageInfo == null) throw new Error("No page info found")
 
   return pageInfo
 }
@@ -30,7 +34,7 @@ export const fetchProjects = async () => {
       technologies[]->
     }
   `
-  const projects = await sanityClient.fetch<Project[]>(projectsQuery)
+  const projects = await sanityClient.fetch<ProjectsQueryResult>(projectsQuery)
 
   return projects
 }
@@ -39,7 +43,7 @@ export const fetchSkills = async () => {
   const skillsQuery = groq`
     *[_type == "skill"]
   `
-  const skills = await sanityClient.fetch<Skill[]>(skillsQuery)
+  const skills = await sanityClient.fetch<SkillsQueryResult>(skillsQuery)
 
   return skills
 }
@@ -48,7 +52,7 @@ export const fetchSocials = async () => {
   const socialsQuery = groq`
     *[_type == "social"]
   `
-  const socials = await sanityClient.fetch<Social[]>(socialsQuery)
+  const socials = await sanityClient.fetch<SocialsQueryResult>(socialsQuery)
 
   return socials
 }
