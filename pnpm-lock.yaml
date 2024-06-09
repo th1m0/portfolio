@@ -22,7 +22,7 @@ importers:
         version: 0.10.1(typescript@5.4.5)(zod@3.23.8)
       framer-motion:
         specifier: ^11.2.6
-        version: 11.2.6(@emotion/is-prop-valid@1.2.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 11.2.10(@emotion/is-prop-valid@1.2.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       geist:
         specifier: ^1.3.0
         version: 1.3.0(next@14.2.3(@babel/core@7.24.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -2667,8 +2667,8 @@ packages:
       react-dom:
         optional: true
 
-  framer-motion@11.2.6:
-    resolution: {integrity: sha512-XUrjjBt57e5YoHQtjwc3eNchFBuHvIgN/cS8SC4oIaAn2J/0+bLanUxXizidJKZVeHJam/JrmMnPRjYMglVn5g==}
+  framer-motion@11.2.10:
+    resolution: {integrity: sha512-/gr3PLZUVFCc86a9MqCUboVrALscrdluzTb3yew+2/qKBU8CX6nzs918/SRBRCqaPbx0TZP10CB6yFgK2C5cYQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -4502,6 +4502,9 @@ packages:
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
+  tslib@2.6.3:
+    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
 
@@ -5706,7 +5709,7 @@ snapshots:
   '@dnd-kit/accessibility@3.1.0(react@18.2.0)':
     dependencies:
       react: 18.2.0
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@dnd-kit/core@6.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
@@ -5714,26 +5717,26 @@ snapshots:
       '@dnd-kit/utilities': 3.2.2(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@dnd-kit/modifiers@6.0.1(@dnd-kit/core@6.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@dnd-kit/core': 6.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@dnd-kit/utilities': 3.2.2(react@18.2.0)
       react: 18.2.0
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@dnd-kit/sortable@7.0.2(@dnd-kit/core@6.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@dnd-kit/core': 6.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@dnd-kit/utilities': 3.2.2(react@18.2.0)
       react: 18.2.0
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@dnd-kit/utilities@3.2.2(react@18.2.0)':
     dependencies:
       react: 18.2.0
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@emotion/is-prop-valid@0.8.8':
     dependencies:
@@ -6122,7 +6125,7 @@ snapshots:
   '@sanity/client@6.18.3(debug@4.3.4)':
     dependencies:
       '@sanity/eventsource': 5.0.2
-      get-it: 8.5.0
+      get-it: 8.5.0(debug@4.3.4)
       rxjs: 7.8.1
     transitivePeerDependencies:
       - debug
@@ -6487,7 +6490,7 @@ snapshots:
   '@swc/helpers@0.5.5':
     dependencies:
       '@swc/counter': 0.1.3
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   '@t3-oss/env-core@0.10.1(typescript@5.4.5)(zod@3.23.8)':
     dependencies:
@@ -6932,7 +6935,7 @@ snapshots:
 
   async-mutex@0.4.1:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   async@3.2.5: {}
 
@@ -7920,13 +7923,17 @@ snapshots:
 
   focus-lock@1.3.5:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   follow-redirects@1.15.6: {}
 
   follow-redirects@1.15.6(debug@3.2.7):
     optionalDependencies:
       debug: 3.2.7
+
+  follow-redirects@1.15.6(debug@4.3.4):
+    optionalDependencies:
+      debug: 4.3.4
 
   for-each@0.3.3:
     dependencies:
@@ -7945,15 +7952,15 @@ snapshots:
 
   framer-motion@11.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  framer-motion@11.2.6(@emotion/is-prop-valid@1.2.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  framer-motion@11.2.10(@emotion/is-prop-valid@1.2.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
     optionalDependencies:
       '@emotion/is-prop-valid': 1.2.2
       react: 18.2.0
@@ -8026,7 +8033,7 @@ snapshots:
   get-it@8.5.0(debug@4.3.4):
     dependencies:
       decompress-response: 7.0.0
-      follow-redirects: 1.15.6
+      follow-redirects: 1.15.6(debug@4.3.4)
       is-retry-allowed: 2.2.0
       progress-stream: 2.0.0
       tunnel-agent: 0.6.0
@@ -9394,7 +9401,7 @@ snapshots:
 
   rxjs@7.8.1:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   safe-array-concat@1.1.2:
     dependencies:
@@ -9955,6 +9962,8 @@ snapshots:
 
   tslib@2.6.2: {}
 
+  tslib@2.6.3: {}
+
   tunnel-agent@0.6.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -10075,7 +10084,7 @@ snapshots:
   use-callback-ref@1.3.2(@types/react@18.3.3)(react@18.2.0):
     dependencies:
       react: 18.2.0
-      tslib: 2.6.2
+      tslib: 2.6.3
     optionalDependencies:
       '@types/react': 18.3.3
 
@@ -10091,7 +10100,7 @@ snapshots:
     dependencies:
       detect-node-es: 1.1.0
       react: 18.2.0
-      tslib: 2.6.2
+      tslib: 2.6.3
     optionalDependencies:
       '@types/react': 18.3.3
 
