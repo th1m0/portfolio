@@ -22,7 +22,7 @@ export default defineType({
     defineField({
       name: "company",
       title: "Company",
-      type: "text",
+      type: "string",
       validation: (Rule) => Rule.required(),
     }),
     defineField({

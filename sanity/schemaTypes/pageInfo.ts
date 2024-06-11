@@ -29,7 +29,7 @@ export default defineType({
     defineField({
       name: "backgroundInformation",
       title: "Background Information",
-      type: "string",
+      type: "text",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
