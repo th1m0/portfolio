@@ -40,7 +40,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-hook-form:
         specifier: ^7.51.5
-        version: 7.51.5(react@18.3.1)
+        version: 7.52.0(react@18.3.1)
       react-simple-typewriter:
         specifier: ^5.0.1
         version: 5.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3959,11 +3959,11 @@ packages:
       '@types/react':
         optional: true
 
-  react-hook-form@7.51.5:
-    resolution: {integrity: sha512-J2ILT5gWx1XUIJRETiA7M19iXHlG74+6O3KApzvqB/w8S5NQR7AbU8HVZrMALdmDgWpRPYiZJl0zx8Z4L2mP6Q==}
+  react-hook-form@7.52.0:
+    resolution: {integrity: sha512-mJX506Xc6mirzLsmXUJyqlAI3Kj9Ph2RhplYhUVffeOQSnubK2uVqBFOBJmvKikvbFV91pxVXmDiR+QMF19x6A==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
+      react: ^16.8.0 || ^17 || ^18 || ^19
 
   react-i18next@13.5.0:
     resolution: {integrity: sha512-CFJ5NDGJ2MUyBohEHxljOq/39NQ972rh1ajnadG9BjTk+UXbHLq4z5DKEbEQBDoIhUmmbuS/fIMJKo6VOax1HA==}
@@ -9292,7 +9292,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.3
 
-  react-hook-form@7.51.5(react@18.3.1):
+  react-hook-form@7.52.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
