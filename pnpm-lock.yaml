@@ -85,11 +85,11 @@ importers:
         specifier: 8.4.38
         version: 8.4.38
       prettier:
-        specifier: 3.2.5
-        version: 3.2.5
+        specifier: 3.3.2
+        version: 3.3.2
       prettier-plugin-tailwindcss:
         specifier: 0.6.5
-        version: 0.6.5(prettier@3.2.5)
+        version: 0.6.5(prettier@3.3.2)
       tailwindcss:
         specifier: 3.4.4
         version: 3.4.4
@@ -3925,11 +3925,6 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.2.5:
-    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
-    engines: {node: '>=14'}
-    hasBin: true
-
   prettier@3.3.2:
     resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
     engines: {node: '>=14'}
@@ -6292,7 +6287,7 @@ snapshots:
   '@sanity/client@6.20.1(debug@4.3.5)':
     dependencies:
       '@sanity/eventsource': 5.0.2
-      get-it: 8.6.1(debug@4.3.5)
+      get-it: 8.6.1
       rxjs: 7.8.1
     transitivePeerDependencies:
       - debug
@@ -8205,10 +8200,6 @@ snapshots:
     optionalDependencies:
       debug: 3.2.7
 
-  follow-redirects@1.15.6(debug@4.3.5):
-    optionalDependencies:
-      debug: 4.3.5
-
   for-each@0.3.3:
     dependencies:
       is-callable: 1.2.7
@@ -8307,7 +8298,7 @@ snapshots:
   get-it@8.6.1(debug@4.3.5):
     dependencies:
       decompress-response: 7.0.0
-      follow-redirects: 1.15.6(debug@4.3.5)
+      follow-redirects: 1.15.6
       is-retry-allowed: 2.2.0
       progress-stream: 2.0.0
       tunnel-agent: 0.6.0
@@ -9381,11 +9372,9 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-tailwindcss@0.6.5(prettier@3.2.5):
+  prettier-plugin-tailwindcss@0.6.5(prettier@3.3.2):
     dependencies:
-      prettier: 3.2.5
-
-  prettier@3.2.5: {}
+      prettier: 3.3.2
 
   prettier@3.3.2: {}
 
