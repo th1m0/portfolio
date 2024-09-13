@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
-import { ExperienceQueryResult } from "~/sanity.types";
+import type { ExperienceQueryResult } from "~/sanity.types";
 
 export default function WorkExperience({
   experiences,
