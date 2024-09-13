@@ -4,10 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "typecheck": "tsc --noEmit",
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "start": "next start",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "typegen": "sanity schema extract --enforce-required-fields && sanity typegen generate"
   },
   "dependencies": {

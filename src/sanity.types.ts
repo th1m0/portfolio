@@ -268,7 +268,7 @@ export type SanityImageMetadata = {
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/server/queries.ts
 // Variable: experienceQuery
-// Query:     *[_type == "experience"] {      ...,      technologies[]->    }  
+// Query:     *[_type == "experience"] {      ...,      technologies[]->    }
 export type ExperienceQueryResult = Array<{
   _id: string;
   _type: "experience";
@@ -314,7 +314,7 @@ export type ExperienceQueryResult = Array<{
   points?: Array<string>;
 }>;
 // Variable: pageInfoQuery
-// Query:     *[_type == "pageInfo"][0]  
+// Query:     *[_type == "pageInfo"][0]
 export type PageInfoQueryResult = {
   _id: string;
   _type: "pageInfo";
@@ -358,7 +358,7 @@ export type PageInfoQueryResult = {
   }>;
 } | null;
 // Variable: projectsQuery
-// Query:     *[_type == "project"] {      ...,      technologies[]->    }  
+// Query:     *[_type == "project"] {      ...,      technologies[]->    }
 export type ProjectsQueryResult = Array<{
   _id: string;
   _type: "project";
@@ -401,7 +401,7 @@ export type ProjectsQueryResult = Array<{
   linkToBuild?: string;
 }>;
 // Variable: skillsQuery
-// Query:     *[_type == "skill"]  
+// Query:     *[_type == "skill"]
 export type SkillsQueryResult = Array<{
   _id: string;
   _type: "skill";
@@ -423,7 +423,7 @@ export type SkillsQueryResult = Array<{
   };
 }>;
 // Variable: socialsQuery
-// Query:     *[_type == "social"]  
+// Query:     *[_type == "social"]
 export type SocialsQueryResult = Array<{
   _id: string;
   _type: "social";

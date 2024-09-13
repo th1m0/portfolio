@@ -54,6 +54,6 @@ export default defineType({
       title: "Points",
       type: "array",
       of: [{ type: "string" }],
-    })
-  ]
+    }),
+  ],
 });

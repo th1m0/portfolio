@@ -1,4 +1,4 @@
-import { env } from "~/env"
+import { env } from "~/env";
 import { createClient, type ClientConfig } from "next-sanity";
 import createImageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";

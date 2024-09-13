@@ -18,5 +18,5 @@ export default defineType({
       type: "url",
       validation: (Rule) => Rule.required(),
     }),
-  ]
+  ],
 });
