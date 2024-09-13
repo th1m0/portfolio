@@ -9,7 +9,7 @@ import type { PageInfo } from "~/sanity.types";
 import BackgroundCircles from "./BackgroundCircles";
 
 export default function Hero({ pageInfo }: { pageInfo: PageInfo }) {
-  const [text, count] = useTypewriter({
+  const [text] = useTypewriter({
     words: [`Hi, The Name's ${pageInfo?.name}`, "A guy who loves to <Code />"],
     loop: true,
     delaySpeed: 2000,

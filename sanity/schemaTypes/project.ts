@@ -37,5 +37,5 @@ export default defineType({
       title: "Link to Build",
       type: "url",
     }),
-  ]
+  ],
 });

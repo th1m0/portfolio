@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
-import { SkillsQueryResult } from "~/sanity.types";
+import type { SkillsQueryResult } from "~/sanity.types";
 
 export default function Skills({ skills }: { skills: SkillsQueryResult }) {
   return (
@@ -19,10 +19,10 @@ export default function Skills({ skills }: { skills: SkillsQueryResult }) {
       <div className="grid grid-cols-4 gap-5">
         {skills
           ?.slice(0, skills.length / 2)
-          ?.map((skill, i) => <Skill key={skill._id} skill={skill} />)}
+          ?.map((skill) => <Skill key={skill._id} skill={skill} />)}
 
-        {skills.slice(skills.length / 2, skills.length).map((skill, i) => (
-          <Skill key={skill._id} skill={skill} directionLeft />
+        {skills.slice(skills.length / 2, skills.length).map((skill) => (
+          <Skill key={skill._id} skill={skill} />
         ))}
       </div>
     </motion.div>

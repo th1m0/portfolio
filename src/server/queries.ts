@@ -1,6 +1,12 @@
-import { groq } from "next-sanity"
-import { sanityClient } from "~/sanity"
-import type { ExperienceQueryResult, PageInfoQueryResult, ProjectsQueryResult, SkillsQueryResult, SocialsQueryResult } from "~/sanity.types"
+import { groq } from "next-sanity";
+import { sanityClient } from "~/sanity";
+import type {
+  ExperienceQueryResult,
+  PageInfoQueryResult,
+  ProjectsQueryResult,
+  SkillsQueryResult,
+  SocialsQueryResult,
+} from "~/sanity.types";
 
 export const fetchExperiences = async () => {
   const experienceQuery = groq`
@@ -8,24 +14,25 @@ export const fetchExperiences = async () => {
       ...,
       technologies[]->
     }
-  `
-  const experiences = await sanityClient.fetch<ExperienceQueryResult>(experienceQuery)
+  `;
+  const experiences =
+    await sanityClient.fetch<ExperienceQueryResult>(experienceQuery);
 
-  if (experiences == null) throw new Error("No experiences found")
+  if (experiences == null) throw new Error("No experiences found");
 
-  return experiences
-}
+  return experiences;
+};
 
 export const fetchPageInfo = async () => {
   const pageInfoQuery = groq`
     *[_type == "pageInfo"][0]
-  `
-  const pageInfo = await sanityClient.fetch<PageInfoQueryResult>(pageInfoQuery)
+  `;
+  const pageInfo = await sanityClient.fetch<PageInfoQueryResult>(pageInfoQuery);
 
-  if (pageInfo == null) throw new Error("No page info found")
+  if (pageInfo == null) throw new Error("No page info found");
 
-  return pageInfo
-}
+  return pageInfo;
+};
 
 export const fetchProjects = async () => {
   const projectsQuery = groq`
@@ -33,26 +40,26 @@ export const fetchProjects = async () => {
       ...,
       technologies[]->
     }
-  `
-  const projects = await sanityClient.fetch<ProjectsQueryResult>(projectsQuery)
+  `;
+  const projects = await sanityClient.fetch<ProjectsQueryResult>(projectsQuery);
 
-  return projects
-}
+  return projects;
+};
 
 export const fetchSkills = async () => {
   const skillsQuery = groq`
     *[_type == "skill"]
-  `
-  const skills = await sanityClient.fetch<SkillsQueryResult>(skillsQuery)
+  `;
+  const skills = await sanityClient.fetch<SkillsQueryResult>(skillsQuery);
 
-  return skills
-}
+  return skills;
+};
 
 export const fetchSocials = async () => {
   const socialsQuery = groq`
     *[_type == "social"]
-  `
-  const socials = await sanityClient.fetch<SocialsQueryResult>(socialsQuery)
+  `;
+  const socials = await sanityClient.fetch<SocialsQueryResult>(socialsQuery);
 
-  return socials
-}
+  return socials;
+};

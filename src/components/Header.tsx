@@ -3,7 +3,7 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import type { Social, SocialsQueryResult } from "~/sanity.types";
+import type { SocialsQueryResult } from "~/sanity.types";
 
 function Header({ socials }: { socials: SocialsQueryResult }) {
   return (

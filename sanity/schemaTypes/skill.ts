@@ -28,5 +28,5 @@ export default defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
-  ]
+  ],
 });
