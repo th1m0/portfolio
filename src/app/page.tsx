@@ -3,17 +3,8 @@ import Link from "next/link";
 import About from "~/components/About";
 import Header from "~/components/Header";
 import Hero from "~/components/Hero";
-import Projects from "~/components/Projects";
-import Skills from "~/components/Skills";
-import WorkExperience from "~/components/WorkExperience";
 import Image from "next/image";
-import {
-  fetchPageInfo,
-  fetchExperiences,
-  fetchSkills,
-  fetchProjects,
-  fetchSocials,
-} from "~/server/queries";
+import { fetchPageInfo, fetchSocials } from "~/server/queries";
 import { urlFor } from "~/sanity";
 
 export const revalidate = 10;
@@ -29,9 +20,6 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const pageInfo = await fetchPageInfo();
-  const experiences = await fetchExperiences();
-  const skills = await fetchSkills();
-  const projects = await fetchProjects();
   const socials = await fetchSocials();
 
   return (
