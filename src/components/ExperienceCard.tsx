@@ -57,7 +57,9 @@ export default function ExperienceCard({
             : new Date(experience.dateEnded ?? Date.now()).toDateString()}
         </p>
         <ul className="ml-5 list-disc space-y-4 text-lg">
-          {experience?.points?.map((point, i) => <li key={i}>{point}</li>)}
+          {experience?.points?.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
         </ul>
       </div>
     </article>
